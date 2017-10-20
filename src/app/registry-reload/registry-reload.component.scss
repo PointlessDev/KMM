@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  align-items: center;
+
+  mat-icon.big-header-icon {
+    font-size: 60px;
+    width: 60px;
+    height: 60px;
+  }
+  div {
+    margin-left: 12px;
+    flex: 1;
+    p {
+      margin: 0;
+    }
+  }
+  .mat-spinner, .mat-icon-button {
+    flex-shrink: 1;
+  }
+}
+
+.mat-progress-bar {
+  margin-top: 40px;
+}
+
+.progress-status {
+  margin-top: 4px;
+  text-align: right;
+}

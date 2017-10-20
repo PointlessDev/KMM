@@ -1,0 +1,27 @@
+.focused {
+  background: rgba(255, 255, 255, 0.1);
+}
+mat-sidenav-container, :host {
+  height: 100%;
+}
+mat-sidenav {
+  width: 350px;
+  background: #484848;
+}
+
+.table {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.mat-column-enabled, .mat-column-version {
+  flex: 0.3;
+}
+
+.mat-column-abstract {
+  min-width: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0 10px;
+}

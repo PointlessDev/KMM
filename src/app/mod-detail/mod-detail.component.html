@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <h2 class="mat-headline">{{mod.name}}</h2>
+  <p class="mat-caption">{{mod.description || mod.abstract}}</p>
+  <mat-list>
+    <mat-list-item *ngIf="mod.description">
+      <mat-icon mat-list-icon matTooltip="Abstract">description</mat-icon>
+      <p>{{mod.abstract}}</p>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon matTooltip="Version">build</mat-icon>
+      <p>{{mod.version}}</p>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon matTooltip="Identifier">code</mat-icon>
+      <code>{{mod.identifier}}</code>
+    </mat-list-item>
+  </mat-list>
+</div>

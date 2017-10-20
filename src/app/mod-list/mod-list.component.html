@@ -1,0 +1,37 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="side" [opened]="focusedMod" position="end" (close)="focusedMod = null">
+    <app-mod-detail *ngIf="focusedMod" [mod]="focusedMod"></app-mod-detail>
+  </mat-sidenav>
+  <mat-table class="table" #table [dataSource]="modDataSource">
+    <!-- Enabled Column-->
+    <ng-container matColumnDef="enabled">
+      <mat-header-cell *matHeaderCellDef> Install </mat-header-cell>
+      <mat-cell #installCheckbox *matCellDef="let mod"> <mat-checkbox></mat-checkbox> </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let mod"> {{mod.name}} </mat-cell>
+    </ng-container>
+
+    <!-- Abstract Column -->
+    <ng-container matColumnDef="abstract">
+      <mat-header-cell *matHeaderCellDef> Abstract </mat-header-cell>
+      <mat-cell *matCellDef="let mod"> {{mod.abstract}} </mat-cell>
+    </ng-container>
+
+    <!-- Version Column -->
+    <ng-container matColumnDef="version">
+      <mat-header-cell *matHeaderCellDef> Version </mat-header-cell>
+      <mat-cell *matCellDef="let mod"> {{mod.version}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="enabledColumns"></mat-header-row>
+    <mat-row
+      (click)="handleRowClick($event, mod)"
+      [class.focused]="focusedMod && focusedMod.identifier === mod.identifier"
+      *matRowDef="let mod; columns: enabledColumns;"
+    ></mat-row>
+  </mat-table>
+</mat-sidenav-container>

@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+
+* {
+  position: relative;
+}
+
+html, body {
+  margin: 0;
+  background: #303030;
+  overflow-y: hidden;
+}
+
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$kmm-app-primary: mat-palette($mat-indigo);
+$kmm-app-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$kmm-app-theme: mat-dark-theme($kmm-app-primary, $kmm-app-accent);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($kmm-app-theme);
